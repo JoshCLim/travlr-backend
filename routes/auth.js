@@ -25,4 +25,32 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// User login
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const { rows } = await db.query(
+      "SELECT id, name, email, photo_id, bio, last_location WHERE email = $1",
+      [email]
+    );
+    if (rows.length === 0) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const user = rows[0];
+
+    // Compare the inputted password with the hashed password stored in the database
+    const isPasswordMatch = await bcrypt.compare(password, user.password_hash);
+    if (!isPasswordMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    res.json({ user });
+  } catch (err) {
+    console.error(err);
+    res.status(400).send("Bad Request");
+  }
+});
+
 export default router;
