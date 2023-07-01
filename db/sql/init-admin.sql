@@ -24,7 +24,7 @@ values
     ('4c6376e4-a587-4ce7-b588-6a94ab103685', 'Harper Robinson', 'harper.robinson@example.com', '$2a$10$D2LwGBKymTRb.ItUec5vQeu5r2n5PTgjoO3YP3C/iApD.bZAd2.BW', NULL, 'Fashionista.', point(-33.8782, 151.2099));
 
 insert into locations 
-    (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, cbd, disabled_accessibility) 
+    (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility) 
 values 
     ('Sydney Opera House', 'https://url-to-opera-house-photo.com', point(-33.8568, 151.2153), 0.6, 0.4, 0.2, 0.9, 0.3, 1.0, 0.6, 0.8, 0.2, 0.8, 0.9),
     ('Bondi Beach', 'https://url-to-bondi-beach-photo.com', point(-33.8908, 151.2743), 0.8, 0.7, 0.6, 0.4, 0.9, 0.9, 0.5, 0.7, 0.3, 0.5, 0.7),
@@ -71,3 +71,55 @@ values
     ('b7c23fd0-c829-4437-a546-b5298619804c', 0.7, 0.4, 0.5, 0.2, 0.1, 0.4, 0.3, 0.2, 0.1, 0.6, 0.5),
     ('933b28a3-7130-45c6-ba9a-40a723843f3a', 0.6, 0.5, 0.6, 0.3, 0.2, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
     ('4c6376e4-a587-4ce7-b588-6a94ab103685', 0.5, 0.6, 0.1, 0.2, 0.3, 0.6, 0.5, 0.4, 0.7, 0.2, 0.1);
+
+INSERT INTO photos (user_id, url, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility)
+VALUES
+    ('81e3d2e1-6710-452c-9b16-845fc5a4b987', 'http://example.com/photo0.jpg', 1, 1, 1, 1, 1, 1, 1, 1, 1),
+    ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo1.jpg', 0.2, 0.3, 0.5, 0.7, 0.8, 0.2, 0.4, 0.5, 0.6, 0.6, 0.2),
+    ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo2.jpg', 0.5, 0.6, 0.2, 0.3, 0.1, 0.7, 0.8, 0.2, 0.4, 0.5, 0.9),
+    ('1cc5ab73-05e3-411f-a250-9c7380f270ad', 'http://example.com/photo3.jpg', 0.7, 0.8, 0.2, 0.4, 0.5, 0.6, 0.1, 0.3, 0.7, 0.8, 0.9),
+    ('1cc5ab73-05e3-411f-a250-9c7380f270ad', 'http://example.com/photo4.jpg', 0.9, 0.1, 0.3, 0.5, 0.7, 0.8, 0.2, 0.4, 0.5, 0.1, 0.3),
+    ('1cc5ab73-05e3-411f-a250-9c7380f270ad', 'http://example.com/photo5.jpg', 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.4),
+    ('c5aa3603-012b-419f-9534-d3f9ebaa87f4', 'http://example.com/photo6.jpg', 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.8, 0.1),
+    ('c5aa3603-012b-419f-9534-d3f9ebaa87f4', 'http://example.com/photo7.jpg', 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.6),
+    ('f4957937-2441-4667-8e2a-320d64ac63d0', 'http://example.com/photo8.jpg', 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.5, 0.9),
+    ('f4957937-2441-4667-8e2a-320d64ac63d0', 'http://example.com/photo9.jpg', 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.3, 0.7),
+    ('bc7e855f-6946-4187-85c4-310b98bcbae1', 'http://example.com/photo10.jpg', 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.6, 0.2),
+    ('bc7e855f-6946-4187-85c4-310b98bcbae1', 'http://example.com/photo11.jpg', 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.9, 0.3),
+    ('bc7e855f-6946-4187-85c4-310b98bcbae1', 'http://example.com/photo12.jpg', 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.4, 0.5),
+    ('36ecbec1-45f8-4250-add6-78e4548d3a05', 'http://example.com/photo13.jpg', 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.1, 0.8),
+    ('36ecbec1-45f8-4250-add6-78e4548d3a05', 'http://example.com/photo14.jpg', 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.7, 0.1),
+    ('beb8d21f-6808-4853-b13b-bffe964aea04', 'http://example.com/photo15.jpg', 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.3, 0.2),
+    ('beb8d21f-6808-4853-b13b-bffe964aea04', 'http://example.com/photo16.jpg', 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.6, 0.8),
+    ('8bff72d7-d633-4ceb-8bfc-e340acb12ae1', 'http://example.com/photo17.jpg', 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.4, 0.9),
+    ('8bff72d7-d633-4ceb-8bfc-e340acb12ae1', 'http://example.com/photo18.jpg', 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.2, 0.3),
+    ('744892ec-2f79-4d68-8ef0-247260dac9eb', 'http://example.com/photo19.jpg', 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.6, 0.9),
+    ('744892ec-2f79-4d68-8ef0-247260dac9eb', 'http://example.com/photo20.jpg', 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.1, 0.3),
+    ('744892ec-2f79-4d68-8ef0-247260dac9eb', 'http://example.com/photo21.jpg', 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.4, 0.9),
+    ('1ecad4a3-8e4d-4120-9e0b-5d33ba3d3d29', 'http://example.com/photo22.jpg', 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.2, 0.4),
+    ('1ecad4a3-8e4d-4120-9e0b-5d33ba3d3d29', 'http://example.com/photo23.jpg', 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.5, 0.7),
+    ('c6fdb246-f7c5-43e4-938f-dc7ea004a79a', 'http://example.com/photo24.jpg', 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.8, 0.2),
+    ('c6fdb246-f7c5-43e4-938f-dc7ea004a79a', 'http://example.com/photo25.jpg', 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.7, 0.9),
+    ('c6fdb246-f7c5-43e4-938f-dc7ea004a79a', 'http://example.com/photo26.jpg', 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.5, 0.3),
+    ('f62838b4-4a06-4341-96cd-e3e5f5534a4b', 'http://example.com/photo27.jpg', 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.9, 0.5),
+    ('f62838b4-4a06-4341-96cd-e3e5f5534a4b', 'http://example.com/photo28.jpg', 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.4, 0.5),
+    ('44f7c662-9c35-4158-87b0-b4be6b01e220', 'http://example.com/photo29.jpg', 0.7, 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.6, 0.1),
+    ('44f7c662-9c35-4158-87b0-b4be6b01e220', 'http://example.com/photo30.jpg', 0.8, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.4, 0.7),
+    ('44f7c662-9c35-4158-87b0-b4be6b01e220', 'http://example.com/photo31.jpg', 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.7, 0.8),
+    ('35e4a8b4-adb3-4445-903c-75b36cc960cd', 'http://example.com/photo32.jpg', 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.9, 0.4),
+    ('35e4a8b4-adb3-4445-903c-75b36cc960cd', 'http://example.com/photo33.jpg', 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2, 0.1, 0.6),
+    ('8cb38b83-b467-48f8-ad33-9a9e226af80c', 'http://example.com/photo34.jpg', 0.1, 0.3, 0.6, 0.4, 0.8, 0.7, 0.5, 0.9, 0.2, 0.6, 0.4),
+    ('8cb38b83-b467-48f8-ad33-9a9e226af80c', 'http://example.com/photo35.jpg', 0.2, 0.4, 0.1, 0.5, 0.7, 0.9, 0.3, 0.8, 0.6, 0.2, 0.1),
+    ('8cb38b83-b467-48f8-ad33-9a9e226af80c', 'http://example.com/photo36.jpg', 0.3, 0.5, 0.2, 0.6, 0.8, 0.4, 0.7, 0.1, 0.9, 0.3, 0.5),
+    ('08d06542-3fc8-4c76-8005-c63309e37615', 'http://example.com/photo37.jpg', 0.4, 0.6, 0.3, 0.7, 0.1, 0.5, 0.9, 0.2, 0.8, 0.4, 0.6),
+    ('08d06542-3fc8-4c76-8005-c63309e37615', 'http://example.com/photo38.jpg', 0.5, 0.7, 0.4, 0.8, 0.2, 0.6, 0.1, 0.3, 0.9, 0.5, 0.7),
+    ('2d4665c2-e5d5-4693-bea0-aa9d97a2e3ea', 'http://example.com/photo39.jpg', 0.6, 0.8, 0.5, 0.9, 0.3, 0.7, 0.2, 0.4, 0.1, 0.6, 0.8),
+    ('2d4665c2-e5d5-4693-bea0-aa9d97a2e3ea', 'http://example.com/photo40.jpg', 0.7, 0.9, 0.6, 0.1, 0.4, 0.8, 0.3, 0.5, 0.2, 0.7, 0.9),
+    ('b7c23fd0-c829-4437-a546-b5298619804c', 'http://example.com/photo41.jpg', 0.8, 0.1, 0.7, 0.2, 0.5, 0.9, 0.4, 0.6, 0.3, 0.8, 0.1),
+    ('b7c23fd0-c829-4437-a546-b5298619804c', 'http://example.com/photo42.jpg', 0.9, 0.2, 0.8, 0.3, 0.6, 0.1, 0.5, 0.7, 0.4, 0.9, 0.2),
+    ('933b28a3-7130-45c6-ba9a-40a723843f3a', 'http://example.com/photo43.jpg', 0.1, 0.3, 0.9, 0.4, 0.7, 0.2, 0.6, 0.8, 0.5, 0.1, 0.3),
+    ('933b28a3-7130-45c6-ba9a-40a723843f3a', 'http://example.com/photo44.jpg', 0.2, 0.4, 0.1, 0.5, 0.8, 0.3, 0.7, 0.9, 0.6, 0.2, 0.4),
+    ('933b28a3-7130-45c6-ba9a-40a723843f3a', 'http://example.com/photo45.jpg', 0.3, 0.5, 0.2, 0.6, 0.9, 0.4, 0.8, 0.1, 0.7, 0.3, 0.5),
+    ('4c6376e4-a587-4ce7-b588-6a94ab103685', 'http://example.com/photo46.jpg', 0.4, 0.6, 0.3, 0.7, 0.1, 0.5, 0.9, 0.2, 0.8, 0.4, 0.6),
+    ('4c6376e4-a587-4ce7-b588-6a94ab103685', 'http://example.com/photo47.jpg', 0.5, 0.7, 0.4, 0.8, 0.2, 0.6, 0.1, 0.3, 0.9, 0.5, 0.7),
+    ('4c6376e4-a587-4ce7-b588-6a94ab103685', 'http://example.com/photo48.jpg', 0.6, 0.8, 0.5, 0.9, 0.3, 0.7, 0.2, 0.4, 0.1, 0.6, 0.8);

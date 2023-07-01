@@ -47,12 +47,12 @@ router.post("/", async (req, res) => {
     cozy,
     family,
     wildlife,
-    cbd,
+    near_cbd,
     disabled_accessibility,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "INSERT INTO locations (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, cbd, disabled_accessibility) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *",
+      "INSERT INTO locations (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *",
       [
         name,
         photo_url,
@@ -66,7 +66,7 @@ router.post("/", async (req, res) => {
         cozy,
         family,
         wildlife,
-        cbd,
+        near_cbd,
         disabled_accessibility,
       ]
     );
@@ -92,12 +92,12 @@ router.put("/:id", async (req, res) => {
     cozy,
     family,
     wildlife,
-    cbd,
+    near_cbd,
     disabled_accessibility,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "UPDATE locations SET name = $1, photo_url = $2, coordinates = $3, food = $4, nature = $5, adventure = $6, culture = $7, exercise = $8, tourist_hotspot = $9, cozy = $10, family = $11, wildlife = $12, cbd = $13, disabled_accessibility = $14 WHERE id = $15 RETURNING *",
+      "UPDATE locations SET name = $1, photo_url = $2, coordinates = $3, food = $4, nature = $5, adventure = $6, culture = $7, exercise = $8, tourist_hotspot = $9, cozy = $10, family = $11, wildlife = $12, near_cbd = $13, disabled_accessibility = $14 WHERE id = $15 RETURNING *",
       [
         name,
         photo_url,
@@ -111,7 +111,7 @@ router.put("/:id", async (req, res) => {
         cozy,
         family,
         wildlife,
-        cbd,
+        near_cbd,
         disabled_accessibility,
         req.params.id,
       ]
