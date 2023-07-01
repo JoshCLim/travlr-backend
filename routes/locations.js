@@ -35,7 +35,8 @@ router.get("/:id", async (req, res) => {
 // Create a new location
 router.post("/", async (req, res) => {
   const {
-    url,
+    name,
+    photo_url,
     coordinates,
     food,
     nature,
@@ -46,12 +47,15 @@ router.post("/", async (req, res) => {
     cozy,
     family,
     wildlife,
+    cbd,
+    disabled_disability,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "INSERT INTO locations (url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
+      "INSERT INTO locations (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, cbd, disabled_accessibility) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *",
       [
-        url,
+        name,
+        photo_url,
         coordinates,
         food,
         nature,
@@ -62,6 +66,8 @@ router.post("/", async (req, res) => {
         cozy,
         family,
         wildlife,
+        cbd,
+        disabled_disability,
       ]
     );
     res.status(201).json(rows[0]);
@@ -74,7 +80,8 @@ router.post("/", async (req, res) => {
 // Update a location
 router.put("/:id", async (req, res) => {
   const {
-    url,
+    name,
+    photo_url,
     coordinates,
     food,
     nature,
@@ -85,12 +92,15 @@ router.put("/:id", async (req, res) => {
     cozy,
     family,
     wildlife,
+    cbd,
+    disabled_disability,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "UPDATE locations SET url = $1, coordinates = $2, food = $3, nature = $4, adventure = $5, culture = $6, exercise = $7, tourist_hotspot = $8, cozy = $9, family = $10, wildlife = $11 WHERE id = $12 RETURNING *",
+      "UPDATE locations SET name = $1, photo_url = $2, coordinates = $3, food = $4, nature = $5, adventure = $6, culture = $7, exercise = $8, tourist_hotspot = $9, cozy = $10, family = $11, wildlife = $12, cbd = $13, disabled_disability = $14 WHERE id = $15 RETURNING *",
       [
-        url,
+        name,
+        photo_url,
         coordinates,
         food,
         nature,
@@ -101,6 +111,8 @@ router.put("/:id", async (req, res) => {
         cozy,
         family,
         wildlife,
+        cbd,
+        disabled_disability,
         req.params.id,
       ]
     );
