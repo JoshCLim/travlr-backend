@@ -6,6 +6,7 @@ import photos from "./routes/photos.js";
 import preferences from "./routes/preferences.js";
 import locations from "./routes/locations.js";
 import auth from "./routes/auth.js";
+import recommendations from "./routes/recommendations.js";
 import pkg from "pg";
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use("/photos", photos);
 app.use("/locations", locations);
 app.use("/preferences", preferences);
 app.use("/auth", auth);
+app.use("/recommendations", recommendations);
 
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
