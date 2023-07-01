@@ -3,7 +3,7 @@ create table users (
     name text not null,
     email text unique not null,
     password_hash bytea not null,
-    photo_id uuid,
+    photo_id text,
     bio text not null,
     last_location point,
     primary key (id)
