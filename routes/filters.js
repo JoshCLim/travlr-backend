@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     res.json(rows);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server Error");
+    res.status(400).send("Bad Request");
   }
 });
 
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
     res.json(rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server Error");
+    res.status(400).send("Bad Request");
   }
 });
 
@@ -49,7 +49,7 @@ router.post("/", async (req, res) => {
     res.status(201).json(rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server Error");
+    res.status(400).send("Bad Request");
   }
 });
 
@@ -80,7 +80,7 @@ router.put("/:id", async (req, res) => {
     res.json(rows[0]);
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server Error");
+    res.status(400).send("Bad Request");
   }
 });
 
@@ -97,7 +97,7 @@ router.delete("/:id", async (req, res) => {
     res.json({ message: "Filter deleted" });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Server Error");
+    res.status(400).send("Bad Request");
   }
 });
 

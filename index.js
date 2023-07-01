@@ -4,6 +4,7 @@ import users from "./routes/users.js";
 import photos from "./routes/photos.js";
 import filters from "./routes/filters.js";
 import locations from "./routes/locations.js";
+import auth from "./routes/auth.js";
 import pkg from "pg";
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/users", users);
 app.use("/photos", photos);
 app.use("/locations", locations);
 app.use("/filters", filters);
+app.use("/auth", auth);
 
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
