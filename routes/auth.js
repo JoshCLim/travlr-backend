@@ -55,7 +55,13 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    res.json({ id: user.id });
+    // Remove the password_hash field for security purposes
+    const users = rows.map((user) => {
+      delete user.password_hash;
+      return user;
+    });
+
+    res.json(users);
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");
