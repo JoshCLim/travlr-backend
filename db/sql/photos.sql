@@ -1,6 +1,6 @@
 create table photos (
     id uuid DEFAULT uuid_generate_v4 (),
-    user_id uuid,
+    user_id uuid not null,
     url text not null,
     food float,
     nature float,

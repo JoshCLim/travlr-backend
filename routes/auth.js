@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
           "INSERT INTO users (name, email, password_hash, photo_id, bio, last_location) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
           [name, email, password_hash, photo_id, bio, last_location]
         );
-        res.status(201).json(rows[0]);
+        res.status(200).json(rows[0]);
       });
   } catch (err) {
     console.error(err);
