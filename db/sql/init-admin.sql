@@ -66,7 +66,7 @@ values
     ('dbb4e062-dbde-4f01-9304-53f96340ef15', 'Sydney Cricket Ground', 'https://url-to-sydney-cricket-ground-photo.com', point(-33.8891, 151.2258), 0.7, 0.3, 0.4, 0.6, 0.7, 0.6, 0.5, 0.5, 0.1, 0.6, 0.9),
     ('f2d7ce6b-6621-4c08-9d6e-8a45dfba4947', 'Kings Cross', 'https://url-to-kings-cross-photo.com', point(-33.8751, 151.2235), 0.8, 0.3, 0.4, 0.6, 0.3, 0.3, 0.6, 0.5, 0.1, 0.6, 0.8),
     ('9f52c65b-6559-4305-a50b-aa29df57b874', 'Macquarie University', 'https://url-to-macquarie-university-photo.com', point(-33.7771, 151.1124), 0.7, 0.7, 0.3, 0.8, 0.3, 0.3, 0.7, 0.6, 0.1, 0.4, 0.9),
-    ('737827d8-bd97-4ed0-a552-358bc35732f0', 'Watsons Bay', 'https://url-to-watsons-bay-photo.com', point(-33.8436, 151.2816), 0.7, 0.8, 0.7, 0.4, 0.7, 0.6, 0.6, 0.7, 0.6, 0.3, 0.6),
+    ('737827d8-bd97-4ed0-a552-358bc35732f0', 'Watsons Bay', 'https://url-to-watsons-bay-photo.com', point(-33.8436, 151.2816), 0.7, 0.8, 0.7, 0.4, 0.7, 0.6, 0.6, 0.7, 0.6, 0.3, 0.6);
 
 insert into preferences
     (user_id, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility)
@@ -93,8 +93,9 @@ values
     ('933b28a3-7130-45c6-ba9a-40a723843f3a', 0.6, 0.5, 0.6, 0.3, 0.2, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2),
     ('4c6376e4-a587-4ce7-b588-6a94ab103685', 0.5, 0.6, 0.1, 0.2, 0.3, 0.6, 0.5, 0.4, 0.7, 0.2, 0.1);
 
-INSERT INTO photos (user_id, url, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility)
-VALUES
+insert into
+    photos (user_id, url, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility)
+values
     ('81e3d2e1-6710-452c-9b16-845fc5a4b987', 'http://example.com/photo0.jpg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
     ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo1.jpg', 0.2, 0.3, 0.5, 0.7, 0.8, 0.2, 0.4, 0.5, 0.6, 0.6, 0.2),
     ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo2.jpg', 0.5, 0.6, 0.2, 0.3, 0.1, 0.7, 0.8, 0.2, 0.4, 0.5, 0.9),
