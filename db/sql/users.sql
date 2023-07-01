@@ -5,7 +5,6 @@ create table users (
     password_hash bytea not null,
     photo_id uuid,
     bio text not null,
-    invalidate_tokens_before timestamp not null,
     last_location point,
     primary key (id)
 );
