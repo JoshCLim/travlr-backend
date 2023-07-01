@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get all recommendations by user ID
-router.get("/user/:id", async (req, res) => {
+router.get("/all/user/:id", async (req, res) => {
   try {
     const { rows } = await db.query("SELECT * FROM recommendations WHERE user_id = $1", [
       req.params.id,
@@ -41,7 +41,7 @@ router.get("/user/:id", async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({ message: "Recommendation not found" });
     }
-    res.json(rows[0]);
+    res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");
