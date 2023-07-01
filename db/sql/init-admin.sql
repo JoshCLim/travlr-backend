@@ -1,3 +1,3 @@
 insert into
     users (name, email, password_hash, photo_id, bio, last_location)
-    values ('admin', 'admin', '\xb109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86', NULL, '',  point(0.0, 0.0));
+    values ('admin', 'admin', '$2a$10$D2LwGBKymTRb.ItUec5vQeu5r2n5PTgjoO3YP3C/iApD.bZAd2.BW', NULL, '',  point(0.0, 0.0));

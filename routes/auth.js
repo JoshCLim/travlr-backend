@@ -34,7 +34,7 @@ router.post("/login", async (req, res) => {
 
   try {
     const { rows } = await db.query(
-      "SELECT id, name, email, photo_id, bio, last_location WHERE email = $1",
+      "SELECT id, name, email, password_hash, photo_id, bio, last_location FROM users WHERE email = $1",
       [email]
     );
     if (rows.length === 0) {
@@ -44,12 +44,18 @@ router.post("/login", async (req, res) => {
     const user = rows[0];
 
     // Compare the inputted password with the hashed password stored in the database
-    const isPasswordMatch = await bcrypt.compare(password, user.password_hash);
+    console.log(password);
+    console.log(user);
+    console.log(user.password_hash.toString());
+    const isPasswordMatch = await bcrypt.compare(
+      password,
+      user.password_hash.toString()
+    );
     if (!isPasswordMatch) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    res.json({ user });
+    res.json({ id: user.id });
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");
