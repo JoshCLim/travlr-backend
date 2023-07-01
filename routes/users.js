@@ -1,23 +1,14 @@
 import express from "express";
-import pkg from "pg";
 import dotenv from "dotenv";
+import db from "../index.js";
 dotenv.config();
 
 const router = express.Router();
 
-// Create a PostgreSQL connection pool
-const pool = new pkg.Pool({
-  user: process.env.POSTGRES_USER,
-  password: process.env.POSTGRES_PASSWORD,
-  host: process.env.POSTGRES_HOST,
-  port: 5433,
-  database: process.env.POSTGRES_DBNAME,
-});
-
 // Get all users
 router.get("/", async (req, res) => {
   try {
-    const { rows } = await pool.query("SELECT * FROM users");
+    const { rows } = await db.query("SELECT * FROM users");
     res.json(rows);
   } catch (err) {
     console.error(err);
@@ -28,7 +19,7 @@ router.get("/", async (req, res) => {
 // Get a single user by ID
 router.get("/:id", async (req, res) => {
   try {
-    const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [
+    const { rows } = await db.query("SELECT * FROM users WHERE id = $1", [
       req.params.id,
     ]);
     if (rows.length === 0) {
@@ -53,7 +44,7 @@ router.post("/", async (req, res) => {
     last_location,
   } = req.body;
   try {
-    const { rows } = await pool.query(
+    const { rows } = await db.query(
       "INSERT INTO users (name, email, password_hash, photo_id, about, invalidate_tokens_before, last_location) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
         name,
@@ -84,7 +75,7 @@ router.put("/:id", async (req, res) => {
     last_location,
   } = req.body;
   try {
-    const { rows } = await pool.query(
+    const { rows } = await db.query(
       "UPDATE users SET name = $1, email = $2, password_hash = $3, photo_id = $4, about = $5, invalidate_tokens_before = $6, last_location = $7 WHERE id = $8 RETURNING *",
       [
         name,
@@ -110,7 +101,7 @@ router.put("/:id", async (req, res) => {
 // Delete a user
 router.delete("/:id", async (req, res) => {
   try {
-    const { rows } = await pool.query(
+    const { rows } = await db.query(
       "DELETE FROM users WHERE id = $1 RETURNING *",
       [req.params.id]
     );
