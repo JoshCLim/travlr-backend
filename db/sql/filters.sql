@@ -5,6 +5,6 @@ create table filters (
     public_transport boolean,
     driving boolean,
     intensity boolean,
-    primary key (id)
-    foreign key(user_id) references users(id) on delete set null
+    primary key (id),
+    foreign key(id) references users(id) on delete set null
 );

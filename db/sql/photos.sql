@@ -11,6 +11,6 @@ create table photos (
     cozy boolean,
     family boolean,
     wildlife boolean,
-    primary key (id)
+    primary key (id),
     foreign key(user_id) references users(id) on delete set null
 );
