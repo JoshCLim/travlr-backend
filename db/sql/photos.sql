@@ -11,6 +11,8 @@ create table photos (
     cozy float,
     family float,
     wildlife float,
+    near_cbd float,
+    disabled_accessibility float,
     primary key (id),
     foreign key(user_id) references users(id) on delete set null
 );

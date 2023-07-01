@@ -12,7 +12,7 @@ create table locations (
     cozy float not null default 0.0,
     family float not null default 0.0,
     wildlife float not null default 0.0,
-    cbd float not null default 0.0,
+    near_cbd float not null default 0.0,
     disabled_accessibility float not null default 0.0,
     primary key (id)
 );
