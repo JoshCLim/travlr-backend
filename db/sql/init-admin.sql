@@ -24,7 +24,7 @@ values
     ('4c6376e4-a587-4ce7-b588-6a94ab103685', 'Harper Robinson', 'harper.robinson@example.com', '$2a$10$D2LwGBKymTRb.ItUec5vQeu5r2n5PTgjoO3YP3C/iApD.bZAd2.BW', NULL, 'Fashionista.', point(-33.8782, 151.2099));
 
 insert into locations 
-    (name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility) 
+    (id, name, photo_url, coordinates, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility) 
 values 
     ('caa6946e-2178-47a0-a9e1-528a551441be', 'Sydney Opera House', 'https://url-to-opera-house-photo.com', point(-33.8568, 151.2153), 0.6, 0.4, 0.2, 0.9, 0.3, 1.0, 0.6, 0.8, 0.2, 0.8, 0.9),
     ('f52e3fa6-a5bc-412c-a804-c831cd2a7356', 'Bondi Beach', 'https://url-to-bondi-beach-photo.com', point(-33.8908, 151.2743), 0.8, 0.7, 0.6, 0.4, 0.9, 0.9, 0.5, 0.7, 0.3, 0.5, 0.7),
