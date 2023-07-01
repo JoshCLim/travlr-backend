@@ -32,6 +32,22 @@ router.get("/user/:id", async (req, res) => {
   }
 });
 
+// All users who've favourited a location
+router.get("/location/:id", async (req, res) => {
+    try {
+      const { rows } = await db.query("SELECT * FROM favourites WHERE location_id = $1", [
+        req.params.id,
+      ]);
+      if (rows.length === 0) {
+        return res.status(404).json({ message: "Users not found" });
+      }
+      res.json(rows);
+    } catch (err) {
+      console.error(err);
+      res.status(400).send("Bad Request");
+    }
+  });
+
 // Create a new favourite
 router.post("/", async (req, res) => {
   const {
