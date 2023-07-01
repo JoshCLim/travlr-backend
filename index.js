@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import users from "./routes/users.js";
 import photos from "./routes/photos.js";
 import filters from "./routes/filters.js";
@@ -8,8 +9,13 @@ import auth from "./routes/auth.js";
 import pkg from "pg";
 dotenv.config();
 
+const corsOptions = {
+  origin: ["http://localhost:3000", "travlr.vercel.app"],
+};
+
 const app = express();
 const port = 8000;
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const db = new pkg.Pool({
