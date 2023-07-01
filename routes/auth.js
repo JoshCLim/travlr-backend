@@ -44,9 +44,6 @@ router.post("/login", async (req, res) => {
     const user = rows[0];
 
     // Compare the inputted password with the hashed password stored in the database
-    console.log(password);
-    console.log(user);
-    console.log(user.password_hash.toString());
     const isPasswordMatch = await bcrypt.compare(
       password,
       user.password_hash.toString()
