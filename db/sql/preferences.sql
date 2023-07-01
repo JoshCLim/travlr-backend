@@ -1,6 +1,6 @@
 create table preferences (
     id uuid DEFAULT uuid_generate_v4 (),
-    user_id uuid,
+    user_id uuid not null,
     food float not null default 0.0,
     nature float not null default 0.0,
     adventure float not null default 0.0,
