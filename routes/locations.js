@@ -70,7 +70,7 @@ router.post("/", async (req, res) => {
         disabled_accessibility,
       ]
     );
-    res.status(201).json(rows[0]);
+    res.status(200).json(rows[0]);
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");
