@@ -74,7 +74,7 @@ values
 
 INSERT INTO photos (user_id, url, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility)
 VALUES
-    ('81e3d2e1-6710-452c-9b16-845fc5a4b987', 'http://example.com/photo0.jpg', 1, 1, 1, 1, 1, 1, 1, 1, 1),
+    ('81e3d2e1-6710-452c-9b16-845fc5a4b987', 'http://example.com/photo0.jpg', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
     ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo1.jpg', 0.2, 0.3, 0.5, 0.7, 0.8, 0.2, 0.4, 0.5, 0.6, 0.6, 0.2),
     ('72787bf8-3d7c-4896-a7df-f517f6a3501a', 'http://example.com/photo2.jpg', 0.5, 0.6, 0.2, 0.3, 0.1, 0.7, 0.8, 0.2, 0.4, 0.5, 0.9),
     ('1cc5ab73-05e3-411f-a250-9c7380f270ad', 'http://example.com/photo3.jpg', 0.7, 0.8, 0.2, 0.4, 0.5, 0.6, 0.1, 0.3, 0.7, 0.8, 0.9),
