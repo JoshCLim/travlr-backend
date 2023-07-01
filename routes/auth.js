@@ -1,7 +1,10 @@
+import express from "express";
 import db from "../index.js";
 import bcrypt from "bcrypt";
 
 const saltRounds = 10;
+
+const router = express.Router();
 
 // Register a new user
 router.post("/register", async (req, res) => {
