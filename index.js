@@ -10,7 +10,7 @@ import pkg from "pg";
 dotenv.config();
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "travlr.vercel.app"],
+  origin: ["http://localhost:3000", "https://travlr.vercel.app"],
 };
 
 const app = express();
