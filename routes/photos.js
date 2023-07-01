@@ -37,34 +37,16 @@ router.post("/", async (req, res) => {
   const {
     user_id,
     url,
-    food,
-    nature,
-    adventure,
-    culture,
-    exercise,
-    tourist_hotspot,
-    cozy,
-    family,
-    wildlife,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "INSERT INTO photos (user_id, url, food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
+      "INSERT INTO photos (user_id, url) VALUES ($1, $2) RETURNING *",
       [
         user_id,
         url,
-        food,
-        nature,
-        adventure,
-        culture,
-        exercise,
-        tourist_hotspot,
-        cozy,
-        family,
-        wildlife,
       ]
     );
-    res.status(201).json(rows[0]);
+    res.status(200).json(rows[0]);
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");
