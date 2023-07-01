@@ -16,6 +16,22 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get a single photo by user ID
+router.get("/user/:id", async (req, res) => {
+  try {
+    const { rows } = await db.query("SELECT * FROM photos WHERE user_id = $1", [
+      req.params.id,
+    ]);
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "Photo not found" });
+    }
+    res.json(rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(400).send("Bad Request");
+  }
+});
+
 // Get a single photo by ID
 router.get("/:id", async (req, res) => {
   try {
