@@ -7,6 +7,7 @@ import preferences from "./routes/preferences.js";
 import locations from "./routes/locations.js";
 import auth from "./routes/auth.js";
 import recommendations from "./routes/recommendations.js";
+import connections from "./routes/connections.js";
 import favourites from "./routes/favourites.js";
 import pkg from "pg";
 
@@ -40,6 +41,7 @@ app.use("/locations", locations);
 app.use("/preferences", preferences);
 app.use("/auth", auth);
 app.use("/recommendations", recommendations);
+app.use("/connections", connections);
 app.use("/favourites", favourites);
 
 app.listen(port, () => {

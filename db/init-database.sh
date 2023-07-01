@@ -9,5 +9,6 @@ psql -U postgres -d travlr -f /sql/preferences.sql;
 psql -U postgres -d travlr -f /sql/photos.sql;
 psql -U postgres -d travlr -f /sql/visited.sql;
 psql -U postgres -d travlr -f /sql/recommendations.sql;
+psql -U postgres -d travlr -f /sql/connections.sql;
 psql -U postgres -d travlr -f /sql/init-admin.sql;
 psql -U postgres -d travlr -f /sql/favourites.sql;
