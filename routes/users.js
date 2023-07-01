@@ -39,19 +39,19 @@ router.post("/", async (req, res) => {
     email,
     password_hash,
     photo_id,
-    about,
+    bio,
     invalidate_tokens_before,
     last_location,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "INSERT INTO users (name, email, password_hash, photo_id, about, invalidate_tokens_before, last_location) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+      "INSERT INTO users (name, email, password_hash, photo_id, bio, invalidate_tokens_before, last_location) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
         name,
         email,
         password_hash,
         photo_id,
-        about,
+        bio,
         invalidate_tokens_before,
         last_location,
       ]
@@ -70,19 +70,19 @@ router.put("/:id", async (req, res) => {
     email,
     password_hash,
     photo_id,
-    about,
+    bio,
     invalidate_tokens_before,
     last_location,
   } = req.body;
   try {
     const { rows } = await db.query(
-      "UPDATE users SET name = $1, email = $2, password_hash = $3, photo_id = $4, about = $5, invalidate_tokens_before = $6, last_location = $7 WHERE id = $8 RETURNING *",
+      "UPDATE users SET name = $1, email = $2, password_hash = $3, photo_id = $4, bio = $5, invalidate_tokens_before = $6, last_location = $7 WHERE id = $8 RETURNING *",
       [
         name,
         email,
         password_hash,
         photo_id,
-        about,
+        bio,
         invalidate_tokens_before,
         last_location,
         req.params.id,

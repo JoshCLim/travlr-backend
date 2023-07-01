@@ -1,6 +1,7 @@
 create table locations (
     id uuid DEFAULT uuid_generate_v4 (),
     url uuid not null,
+    coordinates point not null,
     food boolean,
     nature boolean,
     adventure boolean,

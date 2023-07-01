@@ -1,11 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import users from "./routes/users.js";
+import photos from "./routes/photos.js";
+import filters from "./routes/filters.js";
+import locations from "./routes/locations.js";
 import pkg from "pg";
 dotenv.config();
 
 const app = express();
 const port = 8000;
+app.use(express.json());
 
 const db = new pkg.Pool({
   user: process.env.POSTGRES_USER,
@@ -21,6 +25,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", users);
+app.use("/photos", photos);
+app.use("/locations", locations);
+app.use("/filters", filters);
 
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
