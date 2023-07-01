@@ -1,7 +1,7 @@
 create table locations (
     id uuid DEFAULT uuid_generate_v4 (),
     name text not null,
-    photo_url uuid not null,
+    photo_url text not null,
     coordinates point not null,
     food float not null default 0.0,
     nature float not null default 0.0,
