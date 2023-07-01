@@ -7,7 +7,9 @@ import preferences from "./routes/preferences.js";
 import locations from "./routes/locations.js";
 import auth from "./routes/auth.js";
 import recommendations from "./routes/recommendations.js";
+import favourites from "./routes/favourites.js";
 import pkg from "pg";
+
 dotenv.config();
 
 const corsOptions = {
@@ -38,6 +40,7 @@ app.use("/locations", locations);
 app.use("/preferences", preferences);
 app.use("/auth", auth);
 app.use("/recommendations", recommendations);
+app.use("/favourites", favourites);
 
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
