@@ -35,13 +35,32 @@ router.get("/all/user/:id", async (req, res) => {
 // Get latest recommendation by user ID
 router.get("/user/:id", async (req, res) => {
   try {
-    const { rows } = await db.query("SELECT * FROM recommendations WHERE user_id = $1 order by recommended_time desc limit 1", [
-      req.params.id,
-    ]);
+    // const { rows } = await db.query("SELECT * FROM recommendations WHERE user_id = $1 order by recommended_time desc limit 1", [
+    //   req.params.id,
+    // ]);
+
+    const { rows } = await db.query("select * from locations");
+    // console.log(rows)
+
+    // const { boo } = await db.query("select * from locations");
+    // const { user_pref } = await db.query("select food, nature, adventure, culture, exercise, tourist_hotspot, cozy, family, wildlife, near_cbd, disabled_accessibility from preferences");
+    // const matched_locations = [];
+    let start = Math.floor(Math.random() * (rows.length/2))
+    let end = Math.floor(Math.random() * (rows.length) + (rows.length)/2)
+
+    
+    // for (const preference of locations) {
+      //   const differences = user_pref.map((preferenceValue, index) => Math.abs(preferenceValue - locations[index]));
+      
+      //   if (differences.every(diff => diff <= 0.2)) {
+        //     matched_locations.push(preference.name);
+        //   }
+        // }
+        
     if (rows.length === 0) {
       return res.status(404).json({ message: "Recommendation not found" });
     }
-    res.json(rows);
+    return res.json(rows.slice(start, end))
   } catch (err) {
     console.error(err);
     res.status(400).send("Bad Request");

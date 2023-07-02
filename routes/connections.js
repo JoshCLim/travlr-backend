@@ -35,9 +35,14 @@ router.get("/all/user/:id", async (req, res) => {
 // Get latest connections by user ID
 router.get("/user/:id", async (req, res) => {
   try {
-    const { rows } = await db.query("SELECT * FROM connections WHERE user_id = $1 order by connection_time desc limit 1", [
-      req.params.id,
-    ]);
+    // const { rows } = await db.query("SELECT * FROM connections WHERE user_id = $1 order by connection_time desc limit 1", [
+    //   req.params.id,
+    // ]);
+    const { rows } = await db.query("select * from connections");
+
+    let start = Math.floor(Math.random() * (rows.length/2))
+    let end = Math.floor(Math.random() * (rows.length) + (rows.length)/2)
+    
     if (rows.length === 0) {
       return res.status(404).json({ message: "Connection not found" });
     }
