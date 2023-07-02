@@ -38,7 +38,7 @@ router.get("/user/:id", async (req, res) => {
     // const { rows } = await db.query("SELECT * FROM connections WHERE user_id = $1 order by connection_time desc limit 1", [
     //   req.params.id,
     // ]);
-    const { rows } = await db.query("select * from connections");
+    const { rows } = await db.query("select id from connections");
 
     let start = Math.floor(Math.random() * (rows.length/2))
     let end = Math.floor(Math.random() * (rows.length) + (rows.length)/2)

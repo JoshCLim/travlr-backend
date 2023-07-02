@@ -39,7 +39,7 @@ router.get("/user/:id", async (req, res) => {
     //   req.params.id,
     // ]);
 
-    const { rows } = await db.query("select * from locations");
+    const { rows } = await db.query("select id from locations");
     // console.log(rows)
 
     // const { boo } = await db.query("select * from locations");
